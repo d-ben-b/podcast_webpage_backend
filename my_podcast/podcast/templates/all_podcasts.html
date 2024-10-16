@@ -1,14 +1,16 @@
 <!-- @format -->
 
-<!DOCTYPE html>
-<html>
-  <body>
-    <h1>Members</h1>
-
-    <ul>
-      {% for x in mypodcasts %}
-      <li>{{ x.title}} : {{x.about}} _ {{x.version}} * {{x.record_date}}</li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% extends 'master.html' %} {% block title %} All Podcasts {% endblock %}
+{%block content %}
+<h1>All Podcasts</h1>
+<ul>
+  {% for podcast in mypodcasts %}
+  <li>
+    <a href="detail/{{ podcast.id }}"
+      >{{ podcast.title }}----{{ podcast.about }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+<p><a href="/">HOME</a></p>
+{% endblock %}

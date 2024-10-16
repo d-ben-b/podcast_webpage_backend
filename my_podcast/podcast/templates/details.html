@@ -1,0 +1,10 @@
+<!-- @format -->
+
+{% extends 'master.html' %} {% block title %}{{ podcast.title }}{% endblock %}
+{% block content %}
+<h1>{{ mypodcasts.title }}</h1>
+<p>{{ mypodcasts.about }}</p>
+<p>{{ mypodcasts.version }}</p>
+<p>{{ mypodcasts.record_time }}</p>
+<p>back to <a href="/mypodcast">my podcast</a></p>
+{% endblock %}
